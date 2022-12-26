@@ -2,6 +2,7 @@ library("gsmr")
 data("gsmr")
 head(gsmr_data)
 
+gsmr_data <- read.csv(paste(gwasinput,"4079",".inputgsmr",sep=""),headert=T)
 
 freq <- fread("ref/mer_hm3_unr_exc_missnp.freq.frq")
 freq <- freq[,c(2,5)]
