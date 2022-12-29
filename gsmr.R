@@ -12,7 +12,7 @@ names(gsmr_data)
 gsmr_data <- gsmr_data [,c(1:3,13,5:12)]
 names(gsmr_data)[4] <- c("a1_freq")
 
-gsmr_data <- gsmr_data[gsmr_data$bzy_pval > 0.00000005]
+gsmr_data <- gsmr_data[gsmr_data$bzy_pval > 0.00000005,]
 
 write.table(gsmr_data[,c(1,2)], "gsmr_example_snps.allele", col.names=F, row.names=F, quote=F)
 # Extract the genotype data from a GWAS dataset using GCTA
