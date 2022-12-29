@@ -60,7 +60,14 @@ ld_fdr_thresh = 0.05   # FDR threshold to remove the chance correlations between
 gsmr2_beta = 0     # 0 - the original HEIDI-outlier method; 1 - the new HEIDI-outlier method that is currently under development 
 gsmr_results = gsmr(bzx, bzx_se, bzx_pval, bzy, bzy_se, bzy_pval, ldrho, snp_coeff_id, n_ref, heidi_outlier_flag, gwas_thresh, single_snp_heidi_thresh, multi_snps_heidi_thresh, nsnps_thresh, ld_r2_thresh, ld_fdr_thresh, gsmr2_beta)    # GSMR analysis 
 filtered_index=gsmr_results$used_index
-cat("The estimated effect of the exposure on outcome: ",gsmr_results$bxy)
-cat("Standard error of bxy: ",gsmr_results$bxy_se)
-cat("P-value for bxy: ", gsmr_results$bxy_pval)
-cat("Number of pleiotropic outliers: ", length(gsmr_results$pleio_snps))
+
+cat("Hypertension -> ",i,"\n",file="output.txt",append=T)
+cat("The estimated effect of the exposure on outcome: ",gsmr_results$bxy,"\n",file="output.txt",append=T)
+cat("Standard error of bxy: ",gsmr_results$bxy_se,"\n",file="output.txt",append=T)
+cat("P-value for bxy: ", gsmr_results$bxy_pval,"\n",file="output.txt",append=T)
+cat("Number of pleiotropic outliers: ", length(gsmr_results$pleio_snps),"\n",file="output.txt",append=T)
+
+#cat("The estimated effect of the exposure on outcome: ",gsmr_results$bxy)
+#cat("Standard error of bxy: ",gsmr_results$bxy_se)
+#cat("P-value for bxy: ", gsmr_results$bxy_pval)
+#cat("Number of pleiotropic outliers: ", length(gsmr_results$pleio_snps))
