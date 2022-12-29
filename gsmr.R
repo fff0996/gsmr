@@ -42,6 +42,13 @@ gsmr_data$std_bzx = std_zx$b    # standardized bzx
 gsmr_data$std_bzx_se = std_zx$se    # standardized bzx_se
 head(gsmr_data)
 
+bzx = gsmr_data$std_bzx    # SNP effects on the risk factor
+bzx_se = gsmr_data$std_bzx_se    # standard errors of bzx
+bzx_pval = gsmr_data$bzx_pval   # p-values for bzx
+bzy = gsmr_data$bzy    # SNP effects on the disease
+bzy_se = gsmr_data$bzy_se    # standard errors of bzy
+bzy_pval = gsmr_data$bzy_pval   
+
 n_ref = 404 # Sample size of the reference sample
 gwas_thresh = 5e-8    # GWAS threshold to select SNPs as the instruments for the GSMR analysis
 single_snp_heidi_thresh = 0.01    # p-value threshold for single-SNP-based HEIDI-outlier analysis
