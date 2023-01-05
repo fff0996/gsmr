@@ -78,6 +78,11 @@ gcta64 --bfile gsmr_example --extract gsmr_example_snps.allele --update-ref-alle
 snp_coeff_id = scan("gsmr_example.xmat.gz", what="", nlines=1)
 snp_coeff = read.table("gsmr_example.xmat.gz", header=F, skip=2)
 #NA가 있을경우 
+#complete.cases()
+# 각 행에 저장된 모든 값이 NA가 아닐때만 TRUE
+#complete.cases(na_data)
+
+  
 mean(snp_coeff$V127,na.rm=TRUE)
 
 snp_id = Reduce(intersect, list(gsmr_data$SNP, snp_coeff_id))
