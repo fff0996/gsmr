@@ -9,7 +9,7 @@ m2 <- na.omit(m)
 m3 <- m2[,c(7,2,8:14)]
 write.table(m3,"/BiO/Hyein/90Traits/BT/QT_BT/2nd_validation_GWAS/phase2_88_MR/33_GSMR/T2D/clumpedQTGWAS/X30120.clumpedinput",sep="\t",quote=F,row.names=F)
 
-plink --bfile /BiO/Hyein/90Traits/BT/QT_BT/2nd_validation_GWAS/phase2_88_MR/ref/1000G_hm3 --clump-p1 0.000000005 --clump-p2 1 --clump-r2 0.05 --clump-kb 1000 --clump /BiO/Hyein/90Traits/BT/QT_BT/2nd_validation_GWAS/33_GWAS_result/input_ldsc/X${a[$i]} --out X${a[$i]}.GWAS.clump
+plink --bfile /BiO/Hyein/90Traits/BT/QT_BT/2nd_validation_GWAS/phase2_88_MR/ref/1000G_hm3 --clump-p1 0.00000005 --clump-p2 1 --clump-r2 0.05 --clump-kb 1000 --clump /BiO/Hyein/90Traits/BT/QT_BT/2nd_validation_GWAS/33_GWAS_result/input_ldsc/X${a[$i]} --out X${a[$i]}.GWAS.clump
 
 #make inputdata(QT->BT)
 qt <- read.table("../clumpedQTGWAS/X20151.GWAS.clump.clumped",header=T)
